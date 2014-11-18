@@ -4,7 +4,6 @@ git:
 env:
 script:
   - sudo apt-get -y install zip libsqlite3-dev sqlite3 rpm 1> /dev/null 2> /dev/null
-  - echo 1
 services:
   - mysql
 
