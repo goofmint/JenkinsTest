@@ -1,19 +1,6 @@
-image: ubuntu:latest
+image: mischief/docker-golang
 env:
+  - GOPATH=/var/cache/drone
 script:
-  - sudo apt-get -y install git zip libsqlite3-dev sqlite3 rpm 1> /dev/null 2> /dev/null
-git:
-  path: github.com/moongift/JenkinsTest/
-services:
-  - mysql
-
-publish:
-  s3:
-    acl: public-read
-    region: us-east-1
-    bucket: drone.moongift.jp
-    access_key: $$AWS_KEY
-    secret_key: $$AWS_SECRET
-    source: /
-    target: /
-    recursive: true
+  - go build
+  - go test -cover -v
