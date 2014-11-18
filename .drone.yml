@@ -1,4 +1,4 @@
-image: bradrydzewski/ubuntu
+image: bradrydzewski/ruby:2.0.0
 git:
   path: github.com/moongift/JenkinsTest/
 env:
